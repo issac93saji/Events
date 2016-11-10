@@ -1,0 +1,37 @@
+
+
+{% extends 'events/base.html' %}
+
+{% block body_block %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+
+<div class="container">
+
+        <h1>Register with Events @ Sayone...</h1>
+
+        {% if registered %}
+            <strong>thank you for registering!</strong>
+            <a href="/events/">Return to the homepage.</a><br />
+        {% else %}
+            <br>
+            <strong>register here!</strong><br/><br>
+
+
+
+        <form id="user_form" method="post" action="/events/register/"
+                enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+
+            <input type="submit" name="submit" value="Register" />
+        </form>
+        {% endif %}
+</div>
+
+{% endblock %}

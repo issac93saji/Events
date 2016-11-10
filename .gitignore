@@ -6,7 +6,7 @@
 *.bak
 
 settings_local.py
-db.sql
+db.sqlite3
 /media/
 /www/
 /uploads/
